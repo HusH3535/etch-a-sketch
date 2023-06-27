@@ -35,7 +35,7 @@ body{
 }
 
 .white-board{
-    background-color: rgb(218, 218, 220);
+    background-color:  #f9faf8;
     width: 35vw;
     height: 35vw;
     display: flex;

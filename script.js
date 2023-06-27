@@ -13,13 +13,23 @@ for (let i = 0; i < cells.length; i++) {
     const cellArrayWidth = (1/cell_num) * 100;
     cellArray.style.cssText = `flex-basis: ${cellArrayWidth}%; display: flex; flex-growth: 0; flex-shirnk: 0`;
     container.appendChild(cellArray);
+
+
     for (let j = 0; j < cells[i].length; j++) {
-        const div = document.createElement('div');
+        const cell = document.createElement('div');
         
-        div.classList.add('cell');  
+        cell.classList.add('cell');  
         const basis = (1/cell_num) * 100;
-        div.style.cssText = `flex-basis: ${basis}%; flex-growth: 0; flex-shirnk: 0`;
-        cellArray.appendChild(div);
+        cell.style.cssText = `flex-basis: ${basis}%; flex-growth: 0; flex-shirnk: 0`;
+        cell.addEventListener('click', (e) => {
+            if (e.target.style.background == 'black') {
+                e.target.style.background =  `#f9faf8`;
+            }else{
+                e.target.style.background = 'black';
+            }
+            
+        });
+        cellArray.appendChild(cell);
     }    
 }
 
