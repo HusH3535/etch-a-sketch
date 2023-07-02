@@ -1,10 +1,33 @@
 const container = document.querySelector('.white-board');
+const buttonContainer = document.querySelector('.buttons');
+const colorChoices = ["black", "f9faf8"];
+
+let selected_color = colorChoices[0];
 
 let cell_num = 16;
 
 let cells;
 
 CreateGrid();
+SetUpButtons();
+
+function SetUpButtons(){
+
+    let btn1 = document.getElementById('size16');
+    btn1.onclick = () => ReSizeGrid(16);
+    
+    let btn2 = document.getElementById('size32');
+    btn2.onclick = () => ReSizeGrid(32);
+
+    let btn3 = document.getElementById('size64');
+    btn3.onclick = () => ReSizeGrid(64);
+
+}
+
+function ReSizeGrid(newSize){
+    cell_num = newSize;
+    ResetGrid();
+}
 
 function CreateArrayOfCells() {
     cells = new Array(cell_num);
@@ -48,6 +71,7 @@ function CreateGrid() {
             cellArray.appendChild(cell);
         }    
     }
+
 }
 
 function removeAllChildNodes(parent) {
