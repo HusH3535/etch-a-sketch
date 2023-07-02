@@ -51,6 +51,7 @@ body{
     color: azure;
     align-items: center;
     padding: 6px 14px;
+    margin: 0px 5px;
     font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
     border-radius: 6px;
     border: none;
@@ -64,6 +65,28 @@ body{
     outline: 0;
 }
 
+.middle-section{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.colors{
+
+    width: 5vw;
+    height: 45vw;
+    display: flex;
+    background-color: #55667c;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.colorCell{
+    width: 2.5vw;
+    height: 2.5vw;
+    margin: 0;
+    padding: 0;
+}
 
 .buttons{
     padding: 10px;

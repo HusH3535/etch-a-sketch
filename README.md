@@ -7,5 +7,5 @@ This project will look to re-create a simple etch-a-sketch<br />
 =========extras=============<br />
 <br />
 -support multiple colors<br />
--support multiple size grids(32x32, 64x64 and 128x128)<br />
+-support multiple size grids(16x16, 32x32 and 64x64)<br />
 	-support custom size grids<br />

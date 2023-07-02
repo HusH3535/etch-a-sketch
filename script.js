@@ -1,6 +1,6 @@
 const container = document.querySelector('.white-board');
 const buttonContainer = document.querySelector('.buttons');
-const colorChoices = ["black", "f9faf8"];
+const colorChoices = ["black", "#f9faf8", "lightblue","cyan", "blue","red", "lightgreen", "green","darkgreen","pink","yellow","orange","brown"];
 
 let selected_color = colorChoices[0];
 
@@ -10,6 +10,7 @@ let cells;
 
 CreateGrid();
 SetUpButtons();
+CreateColors()
 
 function SetUpButtons(){
 
@@ -61,12 +62,8 @@ function CreateGrid() {
             const basis = (1/cell_num) * 100;
             cell.style.cssText = `flex-basis: ${basis}%; flex-growth: 0; flex-shirnk: 0`;
             cell.addEventListener('click', (e) => {
-                if (e.target.style.background == 'black') {
-                    e.target.style.background =  `#f9faf8`;
-                }else{
-                    e.target.style.background = 'black';
-                }
-                
+                    e.target.style.background =  selected_color;
+
             });
             cellArray.appendChild(cell);
         }    
@@ -74,10 +71,34 @@ function CreateGrid() {
 
 }
 
+function CreateColors() {
+    const colorContainer = document.querySelector('.colors');
+
+    for (let i = 0; i < colorChoices.length; i++) {
+        const colorCell = document.createElement('div');
+        
+        
+        // colorCell.classList.add('cell');  
+        colorCell.classList.add('colorCell');  
+        
+        colorCell.style.background =  colorChoices[i];
+        colorContainer.appendChild(colorCell);
+
+        colorCell.addEventListener('click', (e) => {
+            
+            selected_color = e.target.style.background;
+            
+            
+        });
+    }
+}
+
 function removeAllChildNodes(parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
+
+    
 }
 
 function DeleteCurrentGrid() {
