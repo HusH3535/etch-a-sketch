@@ -36,8 +36,8 @@ body{
 
 .white-board{
     background-color:  #f9faf8;
-    width: 45vw;
-    height: 45vw;
+    width: min(75vw, 75vh);
+    height: min(75vw, 75vh);
     display: flex;
     flex-direction: column;
     
@@ -72,7 +72,7 @@ body{
 .colors{
 
     width: 5vw;
-    height: 45vw;
+    height: min(75vw, 75vh);;
     display: flex;
     background-color: #55667c;
     flex-wrap: wrap;
@@ -80,7 +80,7 @@ body{
 }
 
 .colorCell{
-    width: 2.5vw;
+    width: 5vw;
     height: 2.5vw;
     margin: 0;
     padding: 0;
